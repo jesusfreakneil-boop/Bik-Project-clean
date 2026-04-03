@@ -12,7 +12,7 @@ CITY_DATA = {
 def get_filters():
     """
      Prompt the user for a city, month, and day, then validate the input.
-     
+
     Returns:
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all"
@@ -167,7 +167,10 @@ def user_stats(df):
     print('-' * 40)
 
 def display_raw_data(df):
-    """Displays raw data 5 rows at a time upon user request."""
+    """
+    Display raw data in chunks of 5 rows when requested by the user.
+    Stops when the user answers anything other than "yes" or when no rows remain.
+    """
     start_loc = 0
     while True:
         view_data = input("\nWould you like to see 5 rows of raw data? Enter yes or no: ").strip().lower()
