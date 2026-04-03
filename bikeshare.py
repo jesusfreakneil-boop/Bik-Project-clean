@@ -9,6 +9,8 @@ CITY_DATA = {
     'washington': 'washington.csv'
 }
 
+MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -27,10 +29,9 @@ def get_filters():
         print("Invalid city. Please choose from Chicago, New York City, or Washington.")
 
     # Get user input for month
-    months = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
     while True:
         month = input("Enter month (January to June) or 'all': ").strip().lower()
-        if month in months:
+        if month in MONTHS:
             break
         print("Invalid month. Please try again.")
 
