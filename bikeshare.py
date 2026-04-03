@@ -10,6 +10,7 @@ CITY_DATA = {
 }
 
 MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
+DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
 
 def get_filters():
     """
@@ -36,10 +37,10 @@ def get_filters():
         print("Invalid month. Please try again.")
 
     # Get user input for day of week
-    days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
+    
     while True:
         day = input("Enter day of week or 'all': ").strip().lower()
-        if day in days:
+        if day in DAYS:
             break
         print("Invalid day. Please try again.")
 
