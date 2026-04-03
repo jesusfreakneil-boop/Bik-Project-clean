@@ -11,7 +11,8 @@ CITY_DATA = {
 
 def get_filters():
     """
-    Asks user to specify a city, month, and day to analyze.
+     Prompt the user for a city, month, and day, then validate the input.
+     
     Returns:
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all"
