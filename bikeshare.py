@@ -11,6 +11,8 @@ CITY_DATA = {
 
 MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
 DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
+CITY_PROMPT = "Enter city (Chicago, New York City, Washington): "
+CITY_ERROR = "Invalid city. Please choose from Chicago, New York City, or Washington."
 
 def get_filters():
     """
@@ -24,10 +26,10 @@ def get_filters():
 
     # Get user input for city
     while True:
-        city = input("Enter city (Chicago, New York City, Washington): ").strip().lower()
+        city = input(CITY_PROMPT).strip().lower()
         if city in CITY_DATA:
             break
-        print("Invalid city. Please choose from Chicago, New York City, or Washington.")
+        print(CITY_ERROR)
 
     # Get user input for month
     while True:
