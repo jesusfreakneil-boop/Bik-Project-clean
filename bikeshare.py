@@ -9,6 +9,11 @@ CITY_DATA = {
     'washington': 'washington.csv'
 }
 
+MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
+DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
+CITY_PROMPT = "Enter city (Chicago, New York City, Washington): "
+CITY_ERROR = "Invalid city. Please choose from Chicago, New York City, or Washington."
+
 def get_filters():
     """
      Prompt the user for a city, month, and day, then validate the input.
@@ -22,24 +27,23 @@ def get_filters():
 
     # Get user input for city
     while True:
-        city = input("Enter city (Chicago, New York City, Washington): ").strip().lower()
+        city = input(CITY_PROMPT).strip().lower()
         if city in CITY_DATA:
             break
-        print("Invalid city. Please choose from Chicago, New York City, or Washington.")
+        print(CITY_ERROR)
 
     # Get user input for month
-    months = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
     while True:
         month = input("Enter month (January to June) or 'all': ").strip().lower()
-        if month in months:
+        if month in MONTHS:
             break
         print("Invalid month. Please try again.")
 
     # Get user input for day of week
-    days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
+    
     while True:
         day = input("Enter day of week or 'all': ").strip().lower()
-        if day in days:
+        if day in DAYS:
             break
         print("Invalid day. Please try again.")
 
